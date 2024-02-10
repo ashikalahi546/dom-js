@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="input-text-disply">Default input text</p>
+    <input id="input-field" type="text" /> 
+    <button id ="btn-update">update</button>
+
+    <!-- option 1 -->
+    <h1 id="final-dom">Final Dom</h1>
+    <button onclick="addOnClick()">Add on click</button>
+    <button id="even-lisenter">Hanle Event</button>
+
+    <script>
+      function addOnClick() {
+        const finalDom = document.getElementById("final-dom");
+        finalDom.innerText = "handle by function";
+      }
+
+      document.getElementById("even-lisenter")
+        .addEventListener("click", function () {
+          const finalDom = document.getElementById("final-dom");
+          finalDom.innerText = "text update";
+        });
+
+      // option 2
+
+document.getElementById('btn-update').addEventListener('click', function(){
+const inputField = document.getElementById('input-field');
+// console.log(inputField.value)
+const inputText= inputField.value;
+const p = document.getElementById('input-text-disply');
+p.innerText = inputText ;
+inputField.value = '';
+})
+    </script>
+
+    <!-- <script src="dom.js"></script> -->
+  </body>
+</html>
